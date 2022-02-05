@@ -20,6 +20,8 @@ AUTH_USER_MODEL= 'accounts.User'
 # Application definition
 
 INSTALLED_APPS = [
+    'train.apps.TrainConfig',
+    'station.apps.StationConfig',
     'shunt_factor.apps.ShuntFactorConfig',
     'accounts.apps.AccountsConfig',
     'driver.apps.DriverConfig',
@@ -114,6 +116,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGOUT_REDIRECT_URL='smartTrain'
+
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [

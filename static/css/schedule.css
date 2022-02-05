@@ -1,0 +1,164 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+body {
+    font-family: 'Cairo', sans-serif;
+}
+ul {
+    list-style:none;
+}
+.container {
+    padding-left:15px;
+    padding-right:15px;
+    margin-left:auto;
+    margin-right:auto;
+}
+@media (min-width:768px) {
+    .container {
+        width:750px
+    }
+}
+@media (min-width:992px) {
+    .container {
+        width:970px;
+    }
+}
+@media (min-width:1200px) {
+    .container{
+        width:1170px;
+    }
+}
+.header {
+    background-color:#000;
+    color:#fff;
+    padding:20px 0;
+}
+.header .container {
+    display:flex;
+    justify-content:space-between;
+}
+@media (max-width:767px) {
+    .header .container {
+        flex-direction:column-reverse;
+        align-items:center;
+        gap:20px
+    }
+}
+.header .container ul{
+    display:flex;
+    gap:30px;
+    align-items:center;
+    height:50px;
+}
+.header .container ul li {
+    color:#fff;
+}
+.header .container ul li i {
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
+    transition:.3s;
+}
+.header .container ul li i:hover {
+    color:orange;
+}
+.header .container .my-date {
+    display:flex;
+    align-items:flex-end;
+}
+.header .container img {
+    width:60px;
+    margin-left:75px;
+}
+.header .container h3 {
+    color:orange;
+}
+.landing {
+    background-image:url("../images/photo_2021-12-29_20-13-54.jpg");
+    background-size:cover;
+    height:90.1vh;
+    position:relative;
+}
+.landing::before {
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:rgb(0 0 0 / 50%);
+}
+.landing .container .title{
+    position:relative;
+    display:flex;
+    justify-content:space-around;
+}
+.landing .container .title a {
+    color:#fff;
+    text-decoration: none;
+    font-size:22px;
+    background-color:orange;
+    padding:10px 40px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+@media (max-width:767px) {
+    .landing .container .title a {
+        padding:10px 20px;
+    }
+}
+.landing .container .title a:hover {
+    background-color:#cc8400;
+}
+.my-table{
+    position:absolute;
+    top:150px;
+}
+.my-table table {
+    padding:20px;
+    width:700px;
+    border-spacing:9px;
+    font-weight:bold;
+}
+@media (max-width:767px) {
+    .my-table table {
+        width:300px;
+    }
+}
+.my-table table tr:first-child {
+    margin:20px;
+    width:300px;
+    background-color:orange;
+    color:#fff;
+}
+.my-table table tr:nth-of-type(2) {
+    background-color:#fff;
+}
+.my-table table tr:nth-of-type(3) {
+    background-color:transparent;
+    color:white;
+}
+.my-table table tr:nth-of-type(4) {
+    background-color:#fff;
+
+}
+.my-table table tr:nth-of-type(5) {
+    background-color:transparent;
+    color:#fff;
+}
+.my-table table tr:nth-of-type(6) {
+    background-color:#fff;
+}
+.my-table table tr:nth-of-type(7) {
+    background-color:transparent;
+    color:#fff;
+}
+.my-table table tr:nth-of-type(8) {
+    background-color:#fff;
+}
+.my-table table tr td{
+    padding:10px;
+    text-align:center;
+}

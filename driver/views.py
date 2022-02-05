@@ -1,15 +1,13 @@
 from django.shortcuts import render, redirect
-import datetime  # for get date
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.shortcuts import render
-from accounts.decorators import unauthenticated_user, allowed_user
+from .decorators import unauthenticated_driver, allowed_only_drivers
 from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-@unauthenticated_user
-@allowed_user(allowed_list=['driver'])
+@unauthenticated_driver
 def login_driver(request):
     username = password = ''
     if request.method == 'POST':
@@ -25,64 +23,8 @@ def login_driver(request):
     return render(request, 'driver/driverLogin.html')
 
 
-def driver_logout(request):
-    logout(request)
-    return redirect('driverLogin')
-
-
-# function to get date in arabic
-def arabicday(arday):
-    if arday == 'sun':
-        return 'الاحد'
-    elif arday == 'Mon':
-        return 'الاثنين'
-    elif arday == 'Tues':
-        return 'الثلاثاء'
-    elif arday == 'Wednes':
-        return 'الاربعاء'
-    elif arday == 'Thurs':
-        return 'الخميس'
-    elif arday == 'Fri':
-        return 'الجمعة'
-    elif arday == 'Satur':
-        return 'السبت'
-
-
-def arabicmonth(englishmonth):
-    if englishmonth == 'September':
-        return 'سيتمير'
-    elif englishmonth == 'October':
-        return "اكتوبر"
-    elif englishmonth == 'November':
-        return "نوفمبر"
-    elif englishmonth == 'December':
-        return "ديسمبر"
-    elif englishmonth == 'January':
-        return "يناير"
-    elif englishmonth == 'February':
-        return "فبراير"
-    elif englishmonth == 'March':
-        return "مارس"
-    elif englishmonth == 'April':
-        return "ابريل"
-    elif englishmonth == 'May':
-        return "مايو"
-    elif englishmonth == 'June':
-        return "يونيو"
-    elif englishmonth == 'July':
-        return "يوليو"
-    elif englishmonth == 'August':
-        return "اغسطس"
-
 @login_required(login_url='driverLogin')
-@allowed_user(allowed_list=['driver'])
+@allowed_only_drivers(allowed_list=["drivers"])
 def selecttripView(request):
-    currentDate = datetime.datetime.now()
-    day = currentDate.strftime('%a')
-    numday = currentDate.strftime('%d')
-    month = currentDate.strftime('%B')
-    year = currentDate.strftime('%Y')
-    arbday = arabicday(day)
-    arbmonth = arabicmonth(month)
-    context = {'day': arbday, 'numday': numday, 'month': arbmonth, 'year': year}
+    context = {}
     return render(request, 'driver/selectTrip.html', context)

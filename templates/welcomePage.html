@@ -1,23 +1,30 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- bootstrap file css-->
-    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/welcomePage.css'%}">
-    <title>سكك حديد مصر</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <title>Document</title>
 </head>
 <body>
-
-
-    <a class="" href="{% url 'driverLogin'%}">سائق القطر</a>
-    <a class="" href="{% url 'shuntLogin' %}">عامل التحويلة</a>
-    <a class="" href="#">موظفة هيئة</a>
-
-
-<script src="{% static 'js/iquery-3.6.0.js'%}"></script>
-<script src="{% static 'js/bootstrap.js'%}"></script>
+    <div class="landing">
+        <div class="container">
+            <div class="my-divs">
+                <div class="logo">
+                    <h3>مرحبا بكم فى</h3>
+                    <img src="{% static 'images/logo.png'%}" alt="logo">
+                    <h4>بوابة تحكم سكك حديد مصر</h4>
+                </div>
+                <div class="buttons">
+                    <h5>تسجيل الدخول ك</h5>
+                    <a href="{% url 'driverLogin'%}">سائق القطار</a>
+                    <a href="{% url 'shuntLogin' %}">عامل التحويلة</a>
+                    <a href="#">موظفي الهيئة</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect
-from accounts.decorators import unauthenticated_user, allowed_user
+from .decorators import unauthenticated_shunt_factor , allowed_only_shunt
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-@unauthenticated_user
-@allowed_user(allowed_list=['shunt_factors'])
+@unauthenticated_shunt_factor
 def shuntLogin(request):
     username = password = ''
     if request.method == 'POST':
@@ -24,6 +23,7 @@ def shuntLogin(request):
 
 
 @login_required(login_url='shuntLogin')
-@allowed_user(allowed_list=['shunt_factors'])
+@allowed_only_shunt(allowed_list=["shunt_factors"])
 def welcomeshunt(request):
     return render(request, 'shunt_factor/welcomeshunt.html')
+
