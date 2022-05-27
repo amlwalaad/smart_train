@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>سكك حديد مصر </title>
+{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/project.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navstyle.css' %}">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+{% endblock %}
+
+{% block body %}
+
+    <div class="landing">
+            <div class="title" value = "Add Layer" style="position: absolute; z-index: 1000;" >
+                <a href="#" class="inner">اعطال داخل القطار</a>
+                <a href="#" class="outer">اعطال خارج القطار</a>
+                <a href="#" class="switch"> التحويله</a>
+            </div>
+            <div id="map" class="map">
+            </div>
+        </div>
+
+        <div class="outerMsg">
+            <h3>قطار أخر فى نفس المسار</h3>
+            <h3>عامل التحويلة لا يستجيب</h3>
+        </div>
+        <div class="innerMsg">
+            <h3>حريق</h3>
+            <h3>انفصال مقطورة</h3>
+        </div>
+    </div>
+    <div class="translation">
+        <span>جارى فحص التحويلة</span>
+        <span>3:00pm</span>
+    </div>
+
+    <script>
+    var map = L.map('map').setView([31.41955, 31.8078], 13);
+    L.tileLayer('https://api.mapbox.com/styles/v1/amlwalaad/ckva54p5k6u7u15nzh8128m6g/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYW1sd2FsYWFkIiwiYSI6ImNrdmE0anV2czBlZGgycG56eHp0Y2VlN3cifQ.INOPZqGP9BABV8ATtePMEQ', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiYW1sd2FsYWFkIiwiYSI6ImNrdmE0anV2czBlZGgycG56eHp0Y2VlN3cifQ.INOPZqGP9BABV8ATtePMEQ'
+}).addTo(map);
+
+</script>
+    <script src="{% static 'js/nav.js' %}"></script>
+{% endblock %}

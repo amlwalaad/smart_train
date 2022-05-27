@@ -7,7 +7,9 @@ from . import views
 
 urlpatterns = [
     path('',views.welcomeView,name='smartTrain'),
+    path('profile/',views.profileview,name='profile'),
     # path('accounts/',include('accounts.urls')),
+    path('empolyeeStation/',include('empolyeeStation.urls')),
     path('shunt_factor/',include('shunt_factor.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('driver/' , include('driver.urls')),

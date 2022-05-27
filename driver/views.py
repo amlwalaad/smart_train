@@ -28,3 +28,6 @@ def login_driver(request):
 def selecttripView(request):
     context = {}
     return render(request, 'driver/selectTrip.html', context)
+
+def navview(requset):
+    return render(requset,'driver/nav.html')

@@ -4,7 +4,8 @@
     box-sizing:border-box;
 }
 body {
-    font-family: 'Cairo', sans-serif;
+    font-family: "Arabic Typesetting";
+    font-size: x-large;
 }
 ul {
     list-style:none;
@@ -33,7 +34,7 @@ ul {
 .header {
     background-color:#000;
     color:#fff;
-    padding:20px 0;
+    padding:5px 0px 15px 0px;
 }
 .header .container {
     display:flex;
@@ -54,7 +55,7 @@ ul {
     cursor:pointer;
 }
 .header .container ul li i:hover {
-    color:orange;
+    color:#FFC55C;
 }
 .header .container .my-date {
     display:flex;
@@ -62,13 +63,16 @@ ul {
 }
 .header .container img {
     width:60px;
-    margin-left:75px;
+    margin-bottom: 5px;
+    padding: 0px;
 }
-.header .container h3 {
+.header .container span {
     color:orange;
+    display: block;
+    font-weight: bolder;
 }
 .landing {
-    background-image:url("../images/photo_2021-12-29_20-13-54.jpg");
+    background-image:url("../images/1.jpg");
     background-size:cover;
     height:90.1vh;
     position:relative;
@@ -90,12 +94,12 @@ ul {
 .landing .container .title a {
     color:#fff;
     text-decoration: none;
-    font-size:22px;
     background-color:orange;
     padding:10px 40px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     transition:.3s;
+    font-weight: bold;
 }
 .landing .container .title a:hover {
     background-color:#cc8400;
@@ -112,7 +116,6 @@ ul {
 }
 .my-table table {
     width:600px;
-    border-spacing:2px 5px;
     font-weight:bold;
     text-align:center;
 }
@@ -128,66 +131,8 @@ ul {
         gap:50px;
     }
 }
-.my-table table tr td {
-    padding:20px 13px;
-}
-.my-table table tr:first-child td:first-child {
-    border-top-left-radius:15px;
-    border-bottom-left-radius: 15px;
-}
-.my-table table tr:first-child td:last-child {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-.my-table table tr:nth-of-type(2) td:first-child {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-.my-table table tr:nth-of-type(2) td:last-child {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-.my-table table tr:last-child td:first-child {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-.my-table table tr:last-child td:last-child {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-.my-table table tr:first-child {
-    margin:20px;
-    width:300px;
-    background-color:orange;
-    color:#fff;
-}
-.my-table table tr:nth-of-type(2) {
-    background-color:#fff;
-}
-.my-table table tr:nth-of-type(3) {
-    background-color:#fff;
-    color:#000;
-}
-.landing button {
-    position:relative;
-    background-color:orange;
-    border:none;
-    color:#fff;
-    padding:10px 20px;
-    font-weight:bold;
-    border-radius:10px;
-    top:350px;
-    left:50%;
-    transform:translatex(-50%);
-    cursor:pointer;
-    font-size:22px;
-    transition:.3s;
-}
-@media (max-width:767px) {
-    .landing button {
-        top:450px;
-    }
-}
-.landing button:hover {
-    background-color:#cc8400;
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <!-- Created By CodingLab - www.codinglabweb.com -->
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,22 +14,32 @@
       <div class="container">
           <div class="my-divs">
               <div class="logo">
-                  <h3>مرحبا بكم فى</h3>
-                  <img src="{% static 'images/logo.png' %}" alt="logo">
-                  <h4>بوابة تحكم سكك حديد مصر</h4>
-              </div>
+                    <img src="{% static 'images/logo.png'%}" alt="logo">
+                    <h4>مرحبا بكم فى بوابة تحكم سكك حديد مصر </h4>
+                </div>
               <div class="my-form">
                 <h2>تسجيل دخول عامل التحويلة </h2>
                   <form action="" method="post">
                       {% csrf_token %}
-                    <label for="">الرقم القومى</label>
-                    <input type="text" name="username">
-                    <label for="">كلمة المرور</label>
-                    <input type="password" name="password">
-                    <button>تسجيل الدخول</button>
+                  <table>
+                  <tr>
+                      <td> <label for="">الرقم القومى</label></td>
+                      <td><input type="text" name="username" placeholder="ادخل الرقم القومى المكون من 16 رقم"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="">كلمة المرور</label></td>
+                    <td><input type="password" name="password" placeholder="ادخل كلمة السر "></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"> <button>تسجيل الدخول</button></td>
+                  </tr>
+                  <tr><td colspan="2">
                       {% for message in messages %}
-					<p id="messages">{{message}}</p>
+					<span id="messages" class="error-msg">{{message}}</span>
+                          </td>
 				{% endfor %}
+                  </tr>
+                  </table>
               </form>
 				  </div>
 

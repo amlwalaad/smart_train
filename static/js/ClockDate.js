@@ -1,8 +1,8 @@
 function showDateTime() {
     var myDiv = document.getElementById("myDiv");
-  
+
     var date = new Date();
-    var dayList = ["الاحد", "الاثنين", "الثلاثاء", "الاربعاء", "الخميس", "الجمعة", "السبت"];
+    var dayList = ["الاحد", "الاثنين", "الثلاثاء", "الاربعاء", "الخميس", "الجمعه", "السبت"];
     var monthNames = [
       "يناير",
       "فبراير",
@@ -10,23 +10,23 @@ function showDateTime() {
       "ابريل",
       "مايو",
       "يونيو",
-      "يولو",
+      "يوليو",
       "اغسطس",
-      "سيتمبر",
+      "سبتمبر",
       "اكتوبر",
       "نوفمبر",
-      "دبسمبر"
+      "ديسمبر"
     ];
     var dayName = dayList[date.getDay()];
     var monthName = monthNames[date.getMonth()];
-    var today = `${dayName}, ${monthName} ${date.getDate()}, ${date.getFullYear()}`;
-  
+    var today = `${dayName}, ${date.getDate()}, ${monthName} , ${date.getFullYear()}`;
+
     var hour = date.getHours();
     var min = date.getMinutes();
     var sec = date.getSeconds();
-  
+
     var time = hour + ":" + min + ":" + sec;
-    myDiv.innerText = `  ${today} ${time}`;
+    myDiv.innerText = ` ${time} . ${today}  `;
   }
   setInterval(showDateTime, 1000);
   

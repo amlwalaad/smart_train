@@ -1,27 +1,28 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/index.css'%}">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/stylewelcomepage.css'%}">
+    <title>ادارة سكك حديد مصر </title>
 </head>
 <body>
     <div class="landing">
         <div class="container">
             <div class="my-divs">
                 <div class="logo">
-                    <h3>مرحبا بكم فى</h3>
+
                     <img src="{% static 'images/logo.png'%}" alt="logo">
-                    <h4>بوابة تحكم سكك حديد مصر</h4>
+                    <h4>مرحبا بكم فى بوابة تحكم سكك حديد مصر </h4>
+
                 </div>
+                <span>تسجيل الدخول </span>
                 <div class="buttons">
-                    <h5>تسجيل الدخول ك</h5>
                     <a href="{% url 'driverLogin'%}">سائق القطار</a>
                     <a href="{% url 'shuntLogin' %}">عامل التحويلة</a>
-                    <a href="#">موظفي الهيئة</a>
+                    <a href="{% url 'employee_Station_Login' %}">موظفي الهيئة</a>
                 </div>
             </div>
         </div>

@@ -1,36 +1,40 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
-<title>غرفة تحكم السائق</title>
-    {% endblock %}
+    <title>غرفة تحكم السائق</title>
+{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/selectTrip.css' %}">
+{% endblock %}
 
- {% block body %}
-       <div class="landing">
-        <div class="container">
-            <div class="title">
-    <div class="my-table">
-        <table>
-            <tr>
-                <td>الوقت</td>
-                <td>اسم المحطة</td>
-                <td>رفم الرحلة</td>
-            </tr>
-            <tr>
-                <td>2.00pm</td>
-                <td>القاهرة</td>
-                <td>بداية الرحلة</td>
-            </tr>
-            <tr>
-                <td>4:30pm</td>
-                <td>اسكندرية</td>
-                <td>نهاية الرحلة</td>
-            </tr>
-        </table>
-    </div>
-            </div>
-        </div>
-        <button>الكشف عن القضبان</button>
-    </div>
+{% block body %}
+<div class="landing">
+<div class="container">
+<div class="my-table">
+<table>
+    <tr>
+        <th>الوقت</th>
+        <th>اسم المحطة</th>
+        <th>رقم الرحلة</th>
+    </tr>
+    <tr>
+        <td>2.00 pm</td>
+        <td>دمياط</td>
+        <td>بداية الرحلة</td>
+    </tr>
+    <tr>
+        <td>4:30 pm</td>
+        <td>المنصورة</td>
+        <td>نهاية الرحلة</td>
+    </tr>
 
-    </div>
+</table>
+
+ <a href="{% url 'drivernav' %}">الكشف عن القضبان</a>
+</div>
+
+
+</div>
+</div>
 {% endblock %}

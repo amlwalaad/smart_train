@@ -3,4 +3,5 @@ from . import views
 urlpatterns = [
     path('selecttrip/' ,views.selecttripView , name='selecttrip' ),
     path('driverLogin/',views.login_driver,name='driverLogin'),
+    path('nav/',views.navview,name='drivernav'),
 ]

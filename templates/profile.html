@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+ {% block title %}
+     <title>البيانات الشخصية</title>
+{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/profilestyle.css' %}">
+{% endblock %}
+
+{% block body %}
+<div class="landing">
+        <div class="personal-info">
+            <img src="{% static  'images/avatar-01.png' %}" alt="">
+        </div>
+        <div class="info">
+            <h3>الاسم : {{ name }}</h3>
+            <h3>الرقم القومى : {{ id }}</h3>
+
+            <h3>المهنة :{{ job }} </h3>
+            {% if job == 'سائق' %}
+            <h3>رقم القطر:  {{ details }}</h3>
+            {% endif %}
+            {% if job == 'موظف هيئة' %}
+            <h3> اسم المحطة :  {{ details }}</h3>
+            {% endif %}
+            {% if job == 'عامل تحويلة' %}
+            <h3> اسم التحويلة :  {{ details }}</h3>
+            {% endif %}
+            <h3>رقم الهاتف : {{ phonenumber }}</h3>
+            <h3>تاريخ الميلاد : {{ birthdate|date:"d - n - Y"   }}</h3>
+            <h3>{{ email }} : البريد الالكترونى</h3>
+        </div>
+    </div>
+{% endblock %}
+

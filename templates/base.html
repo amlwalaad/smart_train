@@ -1,12 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/project.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@200;300;400;500;600;700;800&family=Jomhuria&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Scheherazade+New:wght@400;700&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+{#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>#}
     {% block title %}
     {% endblock %}
     {% block style %}
@@ -15,12 +20,14 @@
 </head>
 <body>
     <script src="{% static 'js/ClockDate.js' %}"></script>
+
     <div class="header">
         <div class="container">
             <div class="my-lists">
                 <ul>
-                    <a href="{% url 'logout' %}"> <li><i class="fas fa-arrow-left"></i></li>  </a>
-                    <a href="#"><li><i class="far fa-user-circle"></i></li> </a>
+                    <a href="#" class="back"> <li><i class="fas fa-arrow-left"></i></li></a>
+                    <a href="{% url 'logout' %}"><i class="fa-solid fa-power-off" style="color: white; font-size: 24px;"></i> </li>  </a>
+                    <a href="{% url 'profile' %}" ><li><i class="far fa-user-circle"></i></li> </a>
                     <a href="#"> <li><i class="fas fa-key"></i></li> </a>
                     <a href="#"><li><i class="fas fa-cloud-sun"></i></li> </a>
                 </ul>
@@ -28,9 +35,11 @@
             <div class="my-date">
                 <div id="myDiv"><span></span></div>
             </div>
-            <div class="logo">
+            <div class="logo" style="margin: 0px; padding: 0px; height: 30px;">
+
                 <img src="{% static 'images/logo.png' %}" alt="">
-                <h3>بوابة تحكم سكك حديد مصر</h3>
+                <span>بوابة تحكم سكك حديد مصر </span>
+
             </div>
         </div>
     </div>

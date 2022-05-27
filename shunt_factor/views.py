@@ -23,7 +23,7 @@ def shuntLogin(request):
 
 
 @login_required(login_url='shuntLogin')
-@allowed_only_shunt(allowed_list=["shunt_factors"])
+@allowed_only_shunt(allowed_list=["shunt-factor"])
 def welcomeshunt(request):
     return render(request, 'shunt_factor/welcomeshunt.html')
 

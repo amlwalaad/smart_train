@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+ {% block title %}
+     <title>مرحبا {{ user }}</title>
+    {% endblock %}
 {% block style %}
 <link rel="stylesheet" href="{% static 'css/schedule.css' %}">
 {% endblock %}
@@ -7,18 +10,18 @@
 <div class="landing">
         <div class="container">
             <div class="title">
-                <a href="#">تفقد الشكاوى</a>
                 <a href="#">الخريطة</a>
 
     <div class="my-table">
         <table>
             <tr>
-                <td>موعد الوصول</td>
-                <td>الى</td>
-                <td>من</td>
-                <td>رقم القطار</td>
+                <th>موعد الوصول</th>
+                <th>الى</th>
+                <th>من</th>
+                <th>رقم القطار</th>
             </tr>
-            <tr>
+            <tbody>
+            <tr class="blurring">
                 <td>3:00pm</td>
                 <td>المنصورة</td>
                 <td>دمياط</td>
@@ -30,7 +33,7 @@
                 <td>القاهرة</td>
                 <td>65</td>
             </tr>
-            <tr>
+            <tr class="blurring">
                 <td>3:00pm</td>
                 <td>الاسكندرية</td>
                 <td>المنصورة</td>
@@ -42,7 +45,7 @@
                 <td>طنطا</td>
                 <td>101</td>
             </tr>
-            <tr>
+            <tr class="blurring">
                 <td>4:00pm</td>
                 <td>دمياط</td>
                 <td>المنصورة</td>
@@ -54,12 +57,13 @@
                 <td>طنطا</td>
                 <td>156</td>
             </tr>
-            <tr>
+            <tr class="blurring">
                 <td>6:00pm</td>
                 <td>دمياط</td>
                 <td>الاسكندرية</td>
                 <td>214</td>
             </tr>
+            </tbody>
         </table>
     </div>
             </div>

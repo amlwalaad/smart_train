@@ -1,0 +1,46 @@
+.my-table{
+    color: white;
+    text-align: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+        align-items: center;
+    flex-direction: column;
+
+}
+
+.my-table tr th{
+    color: white;
+    background-color: orange;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bold;
+}
+.my-table tr td{
+    color: black;
+    background-color: white;
+    padding: 15px;
+
+}
+
+.landing a {
+    background-color:orange;
+    margin-top: 20px;
+    border:none;
+    color:#fff;
+    padding:10px 20px;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:22px;
+    transition:.3s;
+    text-decoration: none;
+}
+@media (max-width:767px) {
+    .landing a{
+        top:450px;
+    }
+}
+.landing a:hover {
+    background-color:#FFC55C;
+}
