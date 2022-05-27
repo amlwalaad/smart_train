@@ -1,45 +1,51 @@
 {% load static %}
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
 <head>
-     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- bootstrap file css-->
-    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base.css'%}" >
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/project.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@200;300;400;500;600;700;800&family=Jomhuria&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700;800&family=Scheherazade+New:wght@400;700&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+{#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>#}
     {% block title %}
     {% endblock %}
+    {% block style %}
+    {% endblock %}
+
 </head>
 <body>
-<nav class="navbar navbar-expand-lg ">
-  <div class="container-fluid ">
-    <a class="navbar-brand  " href="#">
-        <img src="{% static 'images/logo.png' %}" width="70" height="70" style="background-color: black">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <script src="{% static 'js/ClockDate.js' %}"></script>
 
-      <div class="top-navigation">
-           <span class="currentdate" style="font-size: 70%;line-height: 38px;">{{day}} {{numday}} {{month}} {{year}}</span>
+    <div class="header">
+        <div class="container">
+            <div class="my-lists">
+                <ul>
+                    <a href="#" class="back"> <li><i class="fas fa-arrow-left"></i></li></a>
+                    <a href="{% url 'logout' %}"><i class="fa-solid fa-power-off" style="color: white; font-size: 24px;"></i> </li>  </a>
+                    <a href="{% url 'profile' %}" ><li><i class="far fa-user-circle"></i></li> </a>
+                    <a href="#"> <li><i class="fas fa-key"></i></li> </a>
+                    <a href="#"><li><i class="fas fa-cloud-sun"></i></li> </a>
+                </ul>
+            </div>
+            <div class="my-date">
+                <div id="myDiv"><span></span></div>
+            </div>
+            <div class="logo" style="margin: 0px; padding: 0px; height: 30px;">
 
-      </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        </li>
-          <li class="nav-item">
-                 <a href="{% url 'driverLogout'%}">تسجيل خروج </a>
-        </li>
-      </ul>
+                <img src="{% static 'images/logo.png' %}" alt="">
+                <span>بوابة تحكم سكك حديد مصر </span>
 
+            </div>
+        </div>
     </div>
 
-  </div>
-</nav>
+{% block body %}
+{% endblock %}
 
-<!-- bootstrap file javascript-->
-<script src="{% static 'js/iquery-3.6.0.js'%}"></script>
-<script src="{% static 'js/bootstrap.js'%}"></script>
 </body>
 </html>

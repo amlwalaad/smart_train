@@ -20,6 +20,10 @@ AUTH_USER_MODEL= 'accounts.User'
 # Application definition
 
 INSTALLED_APPS = [
+    'phonenumber_field',
+    'empolyeeStation.apps.EmpolyeestationConfig',
+    'train.apps.TrainConfig',
+    'station.apps.StationConfig',
     'shunt_factor.apps.ShuntFactorConfig',
     'accounts.apps.AccountsConfig',
     'driver.apps.DriverConfig',
@@ -68,8 +72,12 @@ WSGI_APPLICATION = 'smartTrain.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'smartTrain',
+        'USER':'postgres',
+        'PASSWORD':'0000',
+        'HOST':'localhost',
+        'PORT':'5432',
     }
 }
 
@@ -114,6 +122,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGOUT_REDIRECT_URL='smartTrain'
+
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [

@@ -1,0 +1,51 @@
+.personal-info{
+    position: absolute;
+    right: 0;
+    background-color: orange;
+    width: 400px;
+    height: 100%;
+}
+
+.personal-info img{
+    position:absolute;
+    left:-90px;
+    top:50%;
+    transform:translatey(-50%);
+    border-radius:50%;
+}
+.info{
+    padding-top:80px;
+    position:absolute;
+    top:50%;
+    left:60%;
+    transform:translate(-380px, -270px);
+    text-align:right;
+}
+.info h3 {
+    color: #fff;
+    position: relative;
+    margin: 30px 0;
+    font-size:26px;
+    font-weight:bold;
+}
+@media (max-width:992px){
+    .personal-info{
+        width:300px;
+    }
+}
+@media (max-width:767px){
+    .personal-info{
+        width:200px;
+    }
+    .personal-info img{
+        width:100px;
+        height:100px;
+        left:60px;
+    }
+    .info{
+        transform:translate(-220px, -250px);
+    }
+    .info h3{
+        font-size:20px;
+    }
+}

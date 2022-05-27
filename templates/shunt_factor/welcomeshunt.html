@@ -1,10 +1,72 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<div>welcome shunt factor</div>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+ {% block title %}
+     <title>مرحبا {{ user }}</title>
+    {% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/schedule.css' %}">
+{% endblock %}
+{% block body %}
+<div class="landing">
+        <div class="container">
+            <div class="title">
+                <a href="#">الخريطة</a>
+
+    <div class="my-table">
+        <table>
+            <tr>
+                <th>موعد الوصول</th>
+                <th>الى</th>
+                <th>من</th>
+                <th>رقم القطار</th>
+            </tr>
+            <tbody>
+            <tr class="blurring">
+                <td>3:00pm</td>
+                <td>المنصورة</td>
+                <td>دمياط</td>
+                <td>110</td>
+            </tr>
+            <tr>
+                <td>3:50pm</td>
+                <td>طنطا</td>
+                <td>القاهرة</td>
+                <td>65</td>
+            </tr>
+            <tr class="blurring">
+                <td>3:00pm</td>
+                <td>الاسكندرية</td>
+                <td>المنصورة</td>
+                <td>320</td>
+            </tr>
+            <tr>
+                <td>4:00pm</td>
+                <td>اسيوط</td>
+                <td>طنطا</td>
+                <td>101</td>
+            </tr>
+            <tr class="blurring">
+                <td>4:00pm</td>
+                <td>دمياط</td>
+                <td>المنصورة</td>
+                <td>156</td>
+            </tr>
+            <tr>
+                <td>5:00pm</td>
+                <td>اسيوط</td>
+                <td>طنطا</td>
+                <td>156</td>
+            </tr>
+            <tr class="blurring">
+                <td>6:00pm</td>
+                <td>دمياط</td>
+                <td>الاسكندرية</td>
+                <td>214</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

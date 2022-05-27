@@ -1,0 +1,54 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>مرحبا {{ user }}</title>
+{% endblock %}
+
+{% block style %}
+    <link href="{% static 'css/welcomeEmployeeStation.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="landing">
+    <div class="container">
+    <div class="title">
+        <a href="#" class="damage">الاعطال</a>
+        <a href="#" class="connect-train"> الاتصال بالقطارات </a>
+        <a href="#" class="check-complaints">تفقد الشكاوي</a>
+    </div>
+    <div class="my-side">
+        <div class="close"><i class="far fa-window-close"></i></div>
+        <h3> الشكاوى</h3>
+        <div class="problem-box">
+            <p>يوجد عطل داخل القطار</p>
+            <span>3:00pm</span>
+        </div>
+        <a href="#" class="side-button">رد</a>
+    </div>
+    <div class="my-side2">
+    <div class="close2"> <i class="far fa-window-close"></i></div>
+        <h3>قطار65</h3>
+        <h4>قطار 65 المتجه للاسكندرية</h4>
+        <div class="problem-box2">
+            <p>بوجد فطار فى نفس المسار</p>
+            <span>3:00pm</span>
+        </div>
+        <a href="#" class="side-button2">رد</a>
+        <hr>
+        <p>قطار 65 المتجه للاسكندرية</p>
+        <div class="problem-box3">
+            <p>عامل التحويل لا يستجيب</p>
+            <span>3:45pm</span>
+        </div>
+        <a href="#" class="side-button3">رد</a>
+    </div>
+    <div class="errors">
+        <a href="#" class="first-btn">خلل فى القطبان</a>
+        <a href="#" class="second-btn">السير فى مسار خطأ</a>
+        <a href="#" class="third-btn">خلل فى التحويلة</a>
+        <a href="#" class="fourth-btn">قطار أخر فى نفس المسار</a>
+    </div>
+<a href="#" class="white">تحديد القطار</a>
+<!-- <script src="myscript.js"></script> -->
+<script src="{% static 'js/chat.js'%}"></script>
+{% endblock %}

@@ -1,0 +1,47 @@
+.landing .container .title{
+    position:relative;
+    display:flex;
+    justify-content:space-around;
+}
+.landing .container .title a {
+    color:#fff;
+    text-decoration: none;
+    font-size:22px;
+    background-color:orange;
+    padding:10px 40px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+@media (max-width:767px) {
+    .landing .container .title a {
+        padding:10px 20px;
+    }
+}
+.landing .container .title a:hover {
+    background-color:#cc8400;
+}
+.my-table{
+    
+}
+.my-table tr td{
+    padding: 5px;
+
+}
+.my-table tr th{
+    color: white;
+    background-color: orange;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+.my-table tbody>:nth-child(even){
+    background-color: white;
+    color: black;
+    padding: 5px;
+
+}
+.my-table tbody>:nth-child(odd){
+    background-color: rgb(0,0,0,0.4);
+    color: white;
+    padding: 5px;
+}
